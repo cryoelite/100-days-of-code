@@ -14,7 +14,6 @@ class _M1State extends State<M1> {
       home: Scaffold(
         appBar: AppBar(
           title: Text('HelloWorld')
-          
         )
       )
       
