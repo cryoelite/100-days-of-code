@@ -67,3 +67,10 @@ aFloat = 24.00
 # print(aDict.items()) #returns key and value pairs
 # print(aDict.keys()) #returns all keys
 # print(aDict.values()) #returns all values   
+
+""" def pp(num):         simple error collection
+  try:
+    print(int(num))
+    print("bbo")
+  except ValueError:
+    print("nana") """
