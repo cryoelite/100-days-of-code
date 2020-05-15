@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-import 'package:encrypt/encrypt.dart';
+import 'package:encrypt/encrypt.dart' as ee;
 
 void main() => runApp(Mainly());
 
@@ -11,9 +10,6 @@ class Mainly extends StatefulWidget {
 }
 
 class _MainlyState extends State<Mainly> {
-  final pt="sdada";
-  final key=Key.fromUtf8(23);
-  final iv=IV.fromLength(16)
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,10 +19,16 @@ class _MainlyState extends State<Mainly> {
         width: double.infinity,
         child: Center(
           child: Text(
-            "yaya",
+            encryptFunc(),
           ),
         ),
       ),
     );
+  }
+
+  String encryptFunc() {
+    final key = ee.SecureRandom(8);
+
+    return ("${key.base64} is encryptedText and  is convertedText");
   }
 }
