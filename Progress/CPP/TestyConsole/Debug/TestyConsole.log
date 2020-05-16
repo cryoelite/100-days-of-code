@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(3,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  TestyConsole.vcxproj -> C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\Debug\TestyConsole.exe
