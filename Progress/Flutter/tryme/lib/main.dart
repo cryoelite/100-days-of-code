@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:encrypt/encrypt.dart' as ee;
-
 void main() => runApp(Mainly());
 
 class Mainly extends StatefulWidget {
@@ -9,8 +7,22 @@ class Mainly extends StatefulWidget {
   _MainlyState createState() => _MainlyState();
 }
 
-class _MainlyState extends State<Mainly> {
+class _MainlyState extends State<Mainly> with SingleTickerProviderStateMixin {
+  AnimationController _cc;
   @override
+  void initState() {
+    _cc = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 5),
+    );
+    super.initState();
+  }
+
+  void dispose() {
+    _cc.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Container(
@@ -18,17 +30,27 @@ class _MainlyState extends State<Mainly> {
         height: double.infinity,
         width: double.infinity,
         child: Center(
-          child: Text(
-            encryptFunc(),
+          child: AnimatedBuilder(
+            animation: _cc.view,
+            builder: (context, snapshot) {
+              return buildClipOval();
+            }
           ),
         ),
       ),
     );
   }
 
-  String encryptFunc() {
-    final key = ee.SecureRandom(8);
-
-    return ("${key.base64} is encryptedText and  is convertedText");
+  ClipOval buildClipOval() {
+    return ClipOval(
+      child: Container(
+        color: Colors.black,
+        child: Icon(
+          Icons.android,
+          size: 100,
+          color: Colors.green,
+        ),
+      ),
+    );
   }
 }
