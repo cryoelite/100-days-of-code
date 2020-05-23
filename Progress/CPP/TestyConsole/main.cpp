@@ -4,12 +4,14 @@
 using namespace std;
 
 int main() {
-	int x = 5;
-    int& ref_x2 = x;
-	int* ptr1{ &x };
-	int* &ptr2{ x };
-	ref_x2 = 2;
-	int*& p_ref1 = ptr1;
-	const int*& p_ref2 = ptr2;
+	int x[]{ 1,2,3,4 };
+	int* beg{ &x[0] };
+	cout << *(++beg) << endl;
+	cout << x[0] << endl;
+	beg = &x[0];
+	cout << ++ * beg<<endl;
+	cout << x[0];
+
+
 
 }

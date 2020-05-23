@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(Mainly());
@@ -16,6 +18,7 @@ class _MainlyState extends State<Mainly> with SingleTickerProviderStateMixin {
       duration: Duration(seconds: 5),
     );
     super.initState();
+    _cc.forward();
   }
 
   void dispose() {
@@ -32,9 +35,13 @@ class _MainlyState extends State<Mainly> with SingleTickerProviderStateMixin {
         child: Center(
           child: AnimatedBuilder(
             animation: _cc.view,
-            builder: (context, snapshot) {
-              return buildClipOval();
-            }
+            builder: (context, child) {
+              return Transform.rotate(
+                angle: _cc.value * 4 * pi,
+                child: child,
+              );
+            },
+            child: buildClipOval(),
           ),
         ),
       ),
