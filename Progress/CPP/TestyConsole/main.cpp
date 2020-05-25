@@ -1,5 +1,5 @@
 #include <iostream>
-#include "math.h"
+#include "Classy.h"
 
 
 using namespace std;

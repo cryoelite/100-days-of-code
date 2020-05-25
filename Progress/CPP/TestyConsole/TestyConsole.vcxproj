@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Classy.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="math.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="math.h" />
+    <ClInclude Include="Classy.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
