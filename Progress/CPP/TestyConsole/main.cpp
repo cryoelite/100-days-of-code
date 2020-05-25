@@ -5,10 +5,7 @@
 using namespace std;
 
 int main() {
-	int* p = new int[5];
-	for (int x; x < 5;++x) {
-		p[x] = x;
-
-	}
-
+	Chori A(2.0,3.0);
+	auto b{ std::move(A) };
+	return 0;
 }
