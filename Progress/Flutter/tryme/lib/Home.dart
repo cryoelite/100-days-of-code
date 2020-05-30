@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 
@@ -11,11 +11,39 @@ class Homer extends StatefulWidget {
 }
 
 class _HomerState extends State<Homer> with SingleTickerProviderStateMixin {
-  /* Pendulum p1 = Pendulum();
-  AnimationController anim = AnimationController(); */
-  var pp = 1;
+  static const r = 60;
+  Pendulum swing = Pendulum(r: r);
+  StreamController s1 = StreamController();
+  int time = 0;
+  Timer t1;
+  int x = 0, y = 0;
+  void startTimer() {
+    this.t1 = Timer.periodic(Duration(milliseconds: 17), (_) {
+      swing.updater();
+      setState(() {
+        this.x = swing.xAxis;
+        this.y = swing.yAxis;
+      });
+      s1.sink.add(time += 1);
+    });
+  }
+
   void initState() {
     super.initState();
+    streamIt();
+  }
+
+  void streamIt() {
+    startTimer();
+    StreamSubscription streamer;
+    Stream stream = s1.stream;
+    streamer = stream.listen((event) {
+      if (event == _HomerState.r * 4) {
+        streamer.cancel();
+        s1.close();
+        t1.cancel();
+      }
+    });
   }
 
   @override
@@ -34,28 +62,26 @@ class _HomerState extends State<Homer> with SingleTickerProviderStateMixin {
       child: Stack(
         children: <Widget>[
           Positioned(
-            bottom: RouterConf.blockV * 2,
-            left: RouterConf.hArea / 2.35,
-            child: GestureDetector(
-              child: AnimatedContainer(
-                height:
-                    pp == 1 ? RouterConf.blockH * 200 : RouterConf.blockH *  20,
-                duration: Duration(seconds: 5),
-                curve: Curvy(count: 5),
-                child: ClipOval(
-                  child: Icon(
-                    Icons.blur_circular,
-                    size: 60,
-                    color: Colors.grey,
-                  ),
+            left: RouterConf.blockH * 40,
+            top: RouterConf.blockH * 110,
+            child: Container(
+              width: RouterConf.blockH * 20,
+              height: RouterConf.blockH * 20,
+              child: CustomSingleChildLayout(
+                delegate: DrawIt(this.x, this.y),
+                child: Stack(
+                  children: <Widget>[
+                    CustomPaint(
+                      painter: DrawDot(this.x, this.y),
+                    ),
+                    Icon(
+                      Icons.blur_circular,
+                      color: Colors.amber,
+                      size: 60,
+                    ),
+                  ],
                 ),
               ),
-              onTap: () {
-                setState(() {
-                  pp == 1 ? pp = 0 : pp = 1;
-                });
-                ;
-              },
             ),
           ),
         ],
@@ -64,12 +90,32 @@ class _HomerState extends State<Homer> with SingleTickerProviderStateMixin {
   }
 }
 
-class Curvy extends Curve {
-  final double count;
-  Curvy({this.count = 1});
-
-  @override
-  double transformInternal(double t) {
-    return sin(count * 2 * pi *t) * 0.5 + 0.5;
+class DrawIt extends SingleChildLayoutDelegate {
+  double x, y;
+  DrawIt(x, y) {
+    this.x = x.toDouble();
+    this.y = -y.toDouble();
   }
+  @override
+  Offset getPositionForChild(Size size, Size childSize) {
+    return Offset(this.x, this.y);
+  }
+
+  bool shouldRelayout(_) => true;
+}
+
+class DrawDot extends CustomPainter {
+  double x, y;
+  DrawDot(x, y) {
+    this.x = x.toDouble();
+    this.y = -y.toDouble();
+  }
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint panel = Paint();
+    panel.color = Colors.deepOrange;
+    canvas.drawCircle(Offset(this.x, this.y), 5, panel);
+  }
+
+  bool shouldRepaint(_) => false;
 }
