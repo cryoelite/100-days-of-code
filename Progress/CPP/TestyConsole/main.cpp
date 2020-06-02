@@ -14,7 +14,7 @@ int main() {
 	std::cout << d3.getVal() << std::endl;
 	std::cout << "=====" << std::endl;
 	std::cout << *d1.p << std::endl;
-	std::cout << *d2.p << std::endl;
+	std::cout << *d3.p << std::endl;
 
 
 

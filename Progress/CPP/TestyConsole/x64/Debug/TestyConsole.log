@@ -1,2 +1,40 @@
 ﻿  main.cpp
-  TestyConsole.vcxproj -> C:\Users\arvin\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\x64\Debug\TestyConsole.exe
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(9,21): error C3083: '__fs': the symbol to the left of a '::' must be a type
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(9,27): error C2039: 'filesystem': is not a member of 'std'
+D:\Program\VS\IDE\VC\Tools\MSVC\14.26.28801\include\functional(28): message : see declaration of 'std'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(9,37): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(36,56): error C2039: 'vector': is not a member of 'std'
+D:\Program\VS\IDE\VC\Tools\MSVC\14.26.28801\include\functional(28): message : see declaration of 'std'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(36,72): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(36,62): error C2988: unrecognizable template declaration/definition
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(36,62): error C2143: syntax error: missing ',' before '<'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(38,23): error C3861: 'vec': identifier not found
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(47,11): error C2653: 'fs': is not a class or namespace name
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(47,6): error C2065: 'path': undeclared identifier
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(47,11): error C2146: syntax error: missing ';' before identifier 'path'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(47,11): error C2065: 'path': undeclared identifier
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(48,44): error C2653: 'fs': is not a class or namespace name
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(48,44): error C3536: 'last_write_time': cannot be used before it is initialized
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(48,45): error C2065: 'path': undeclared identifier
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(49,22): error C2653: 'fs': is not a class or namespace name
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(49,18): error C2065: 'path': undeclared identifier
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(49,8): error C2923: 'watch': 'path' is not a valid template type argument for parameter 'T'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(49,8): error C2976: 'watch': too few template arguments
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(11): message : see declaration of 'watch'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(50,4): error C2065: 'path': undeclared identifier
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(51,32): error C2653: 'fs': is not a class or namespace name
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(51,26): error C2065: 'path': undeclared identifier
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(51,32): error C2059: syntax error: ')'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(51,32): error C2062: type 'unknown-type' unexpected
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(52,16): error C2653: 'fs': is not a class or namespace name
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(52,27): error C2143: syntax error: missing ';' before '{'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(52,27): error C2143: syntax error: missing ')' before ';'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(53,8): error C2653: 'fs': is not a class or namespace name
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(53,48): error C2065: 'p': undeclared identifier
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(55,49): error C2065: 'p': undeclared identifier
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(56,43): error C2653: 'fs': is not a class or namespace name
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(56,44): error C2065: 'p': undeclared identifier
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(59,4): error C2059: syntax error: ')'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(60,2): error C2059: syntax error: ')'
+C:\Users\MilliFy\Documents\GitHub\100-days-of-code\Progress\CPP\TestyConsole\main.cpp(61,35): error C2065: 'onChange': undeclared identifier
